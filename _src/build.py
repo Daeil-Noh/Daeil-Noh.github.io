@@ -124,6 +124,9 @@ def pub_item(p, compact=False):
     return f'<li>{body}</li>'
 
 
+CSS_VER = int((ROOT / "assets/style.css").stat().st_mtime)
+
+
 def layout(fname, title, desc, content, scripts=""):
     full = LAB_KO if fname == "index.html" else f"{title} | {LAB_KO}"
     menu = "".join(
@@ -148,7 +151,7 @@ def layout(fname, title, desc, content, scripts=""):
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://cdn.jsdelivr.net">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
-<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/style.css?v={CSS_VER}">
 </head>
 <body>
 <header class="nav">
@@ -300,12 +303,10 @@ def patent_item(p):
 def pub_section(sid, sub, h2, count, body, empty):
     inner = body if count else f'<div class="empty">{empty}</div>'
     return (f'<section id="{sid}"><div class="wrap"><div class="head"><div><div class="sub">{sub}</div>'
-            f'<h2>{h2} <span class="count">{count}</span></h2></div></div>{inner}</div></section>')
+            f'<h2>{h2}</h2></div></div>{inner}</div></section>')
 
 
 def publications():
-    tabs = "".join(f'<a href="#{i}">{n} <span>{c}</span></a>' for i, n, c in
-                   [("journal", "Journal", len(PUBS)), ("conference", "Conference", len(CONFS)), ("patent", "Patent", len(PATENTS))])
     journal = pub_section("journal", "Journal", "저널 논문", len(PUBS), by_year(PUBS, pub_item),
                           "등록된 저널 논문이 없습니다.")
     conf = pub_section("conference", "Conference", "학술대회 논문", len(CONFS), by_year(CONFS, pub_item),
@@ -314,8 +315,7 @@ def publications():
     patent = pub_section("patent", "Patent", "특허", len(PATENTS),
                          f'<ul class="pubs">{"".join(patent_item(p) for p in pats)}</ul>', "특허 목록을 준비 중입니다.")
     content = page_head("Publications", "연구 성과",
-                        f'전체 논문 목록은 <a href="{SCHOLAR}" target="_blank" rel="noopener">Google Scholar</a>에서도 확인할 수 있습니다.') + \
-        f'<div class="subnav"><div class="wrap">{tabs}</div></div>' + journal + conf + patent
+                        f'전체 논문 목록은 <a href="{SCHOLAR}" target="_blank" rel="noopener">Google Scholar</a>에서도 확인할 수 있습니다.') + journal + conf + patent
     return layout("publications.html", "연구 성과", "양자컴퓨팅·AI 융합연구실 연구 성과 — 저널 논문, 학술대회 논문, 특허", content)
 
 
