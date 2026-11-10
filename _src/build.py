@@ -79,6 +79,11 @@ PUBS = [
          venue="IEEE Access", doi="10.1109/ACCESS.2022.3232036", tag="Wireless"),
 ]
 
+STUDENTS = [  # 학생 연구원: 사진은 images/people/ 에 3:4 비율로 저장
+    dict(ko="조희준", en="Hee-Jun Cho", role="학부연구생", dept="인공지능학과 4학년",
+         email="jhg811515@gmail.com", photo="images/people/hee-jun-cho.jpg"),
+]
+
 LOGO = ('<svg width="34" height="34" viewBox="0 0 100 100" aria-hidden="true">'
         '<ellipse cx="50" cy="50" rx="40" ry="14" fill="none" stroke="#3a4fd8" stroke-width="5" opacity=".4"/>'
         '<circle cx="50" cy="50" r="40" fill="none" stroke="#3a4fd8" stroke-width="8"/>'
@@ -210,6 +215,11 @@ def research():
 
 # ---------- People ----------
 def people():
+    members = "".join(
+        f'<div class="member"><img src="{m['photo']}" alt="{m['ko']}" loading="lazy">'
+        f'<div class="info"><h3>{m['ko']}<small>{m['en']}</small></h3>'
+        f'<div class="role">{m['role']}</div><div class="dept">{m['dept']}</div>'
+        f'<a href="mailto:{m['email']}">{m['email']}</a></div></div>' for m in STUDENTS)
     content = page_head("People", "구성원") + f"""<section>
   <div class="wrap">
     <div class="head"><div><div class="sub">Principal Investigator</div><h2>지도교수</h2></div></div>
@@ -234,8 +244,7 @@ def people():
 <section class="alt" id="join">
   <div class="wrap">
     <div class="head"><div><div class="sub">Students</div><h2>학생 연구원</h2></div></div>
-    <!-- 학생 구성원이 생기면 여기에 카드로 추가 -->
-    <div class="members"></div>
+    <div class="members">{members}</div>
     <div class="recruit">
       <b>학부연구생 모집 중</b> — 양자 컴퓨팅, 양자 머신러닝, 컴퓨터 비전, 무선 통신, 스마트 팩토리 분야에 관심 있는 학생은
       <a href="mailto:{EMAIL}">이메일</a>로 연락 주세요.
