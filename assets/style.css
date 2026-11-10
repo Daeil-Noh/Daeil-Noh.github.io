@@ -143,3 +143,15 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 @media (min-width:721px){.members{grid-template-columns:repeat(4,minmax(0,1fr))}}
 @media (max-width:720px){.members{grid-template-columns:repeat(2,minmax(0,1fr))}.member .info{padding:12px 12px 14px}.member h3 small{display:block;margin:0}}
 .photo-ph{width:100%;aspect-ratio:3/4;display:grid;place-items:center;background:#e8ecf8;color:#9aa6c8;font-size:64px;font-weight:800}
+
+/* publications sub-navigation */
+.subnav{position:sticky;top:64px;z-index:5;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.subnav .wrap{display:flex;gap:6px;padding-top:10px;padding-bottom:10px;overflow-x:auto}
+.subnav a{white-space:nowrap;font-size:14.5px;font-weight:600;color:var(--ink-2);padding:8px 14px;border-radius:999px;border:1px solid var(--line)}
+.subnav a:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
+.subnav a span{display:inline-block;min-width:22px;margin-left:4px;padding:0 6px;border-radius:999px;background:var(--bg-2);color:var(--ink-3);font-size:12.5px;text-align:center}
+section[id]{scroll-margin-top:130px}
+h2 .count{font-size:15px;font-weight:700;color:var(--ink-3);margin-left:6px;vertical-align:3px}
+.empty{border:1.5px dashed var(--line);border-radius:12px;padding:28px;text-align:center;color:var(--ink-3);font-size:15px}
+.badge.ok{background:#e7f6ee;color:#137a43}
+@media (max-width:720px){.subnav{position:static}.subnav .wrap{padding-top:12px;padding-bottom:12px}}

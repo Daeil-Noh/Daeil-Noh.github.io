@@ -90,6 +90,12 @@ STUDENTS = [  # 학생 연구원: 사진은 images/people/ 에 3:4 비율로 저
          email="20243242@office.deu.ac.kr", photo=None),  # 사진 받으면 images/people/jaewon-chung.jpg
 ]
 
+# 학회 발표 논문: PUBS와 같은 형식 (venue에 학회명, 필요하면 location 추가, doi는 없으면 None)
+CONFS = []
+
+# 특허: dict(title=, inventors=, number="10-0000000", date="2026.00.00", status="등록"|"출원", country="대한민국")
+PATENTS = []
+
 LOGO = ('<svg width="34" height="34" viewBox="0 0 100 100" aria-hidden="true">'
         '<ellipse cx="50" cy="50" rx="40" ry="14" fill="none" stroke="#3a4fd8" stroke-width="5" opacity=".4"/>'
         '<circle cx="50" cy="50" r="40" fill="none" stroke="#3a4fd8" stroke-width="8"/>'
@@ -100,8 +106,9 @@ LOGO = ('<svg width="34" height="34" viewBox="0 0 100 100" aria-hidden="true">'
 def pub_item(p, compact=False):
     tag = f'<span class="badge">{p["tag"]}</span>' if p.get("tag") else ""
     body = (f'<div class="pt">{p["title"]}</div><div class="pa">{p["authors"]}</div>'
-            f'<div class="pv"><i>{p["venue"]}</i>, {p["year"]} · '
-            f'<a href="https://doi.org/{p["doi"]}" target="_blank" rel="noopener">DOI</a>{tag}</div>')
+            f'<div class="pv"><i>{p["venue"]}</i>{", " + p["location"] if p.get("location") else ""}, {p["year"]}'
+            + (f' · <a href="https://doi.org/{p["doi"]}" target="_blank" rel="noopener">DOI</a>' if p.get("doi") else "")
+            + f'{tag}</div>')
     if compact:
         return f'<li><div class="yr">{p["year"]}</div><div>{body}</div></li>'
     return f'<li>{body}</li>'
@@ -266,18 +273,38 @@ def people():
 
 
 # ---------- Publications ----------
+def by_year(items, render):
+    years = sorted({p["year"] for p in items}, reverse=True)
+    return "".join(f'<div class="year">{y}</div><ul class="pubs">{"".join(render(p) for p in items if p["year"] == y)}</ul>'
+                   for y in years)
+
+
+def patent_item(p):
+    status = f'<span class="badge {"ok" if p["status"] == "등록" else ""}">{p["status"]}</span>'
+    return (f'<li><div class="pt">{p["title"]}</div><div class="pa">{p["inventors"]}</div>'
+            f'<div class="pv">{p.get("country", "대한민국")} {p["status"]}번호 {p["number"]} · {p["date"]}{status}</div></li>')
+
+
+def pub_section(sid, sub, h2, count, body, empty):
+    inner = body if count else f'<div class="empty">{empty}</div>'
+    return (f'<section id="{sid}"><div class="wrap"><div class="head"><div><div class="sub">{sub}</div>'
+            f'<h2>{h2} <span class="count">{count}</span></h2></div></div>{inner}</div></section>')
+
+
 def publications():
-    years = sorted({p["year"] for p in PUBS}, reverse=True)
-    blocks = "".join(
-        f'<div class="year">{y}</div><ul class="pubs">{"".join(pub_item(p) for p in PUBS if p["year"] == y)}</ul>'
-        for y in years)
-    content = page_head("Publications", "논문") + f"""<section>
-  <div class="wrap">
-    {blocks}
-    <p class="note">전체 논문 목록은 <a href="{SCHOLAR}" target="_blank" rel="noopener">Google Scholar</a>에서 확인할 수 있습니다.</p>
-  </div>
-</section>"""
-    return layout("publications.html", "논문", "양자컴퓨팅·AI 융합연구실 논문 목록", content)
+    tabs = "".join(f'<a href="#{i}">{n} <span>{c}</span></a>' for i, n, c in
+                   [("journal", "Journal", len(PUBS)), ("conference", "Conference", len(CONFS)), ("patent", "Patent", len(PATENTS))])
+    journal = pub_section("journal", "Journal", "저널 논문", len(PUBS), by_year(PUBS, pub_item),
+                          "등록된 저널 논문이 없습니다.")
+    conf = pub_section("conference", "Conference", "학술대회 논문", len(CONFS), by_year(CONFS, pub_item),
+                       "학술대회 발표 논문 목록을 준비 중입니다.")
+    pats = sorted(PATENTS, key=lambda p: p["date"], reverse=True)
+    patent = pub_section("patent", "Patent", "특허", len(PATENTS),
+                         f'<ul class="pubs">{"".join(patent_item(p) for p in pats)}</ul>', "특허 목록을 준비 중입니다.")
+    content = page_head("Publications", "연구 성과",
+                        f'전체 논문 목록은 <a href="{SCHOLAR}" target="_blank" rel="noopener">Google Scholar</a>에서도 확인할 수 있습니다.') + \
+        f'<div class="subnav"><div class="wrap">{tabs}</div></div>' + journal + conf + patent
+    return layout("publications.html", "연구 성과", "양자컴퓨팅·AI 융합연구실 연구 성과 — 저널 논문, 학술대회 논문, 특허", content)
 
 
 # ---------- Contact ----------
