@@ -84,6 +84,8 @@ STUDENTS = [  # 학생 연구원: 사진은 images/people/ 에 3:4 비율로 저
          email="jhg811515@gmail.com", photo="images/people/hee-jun-cho.jpg"),
     dict(ko="류의상", en="Ui-Sang Ryu", role="학부연구생", dept="인공지능학과 4학년",
          email="20182366@g.deu.ac.kr", photo="images/people/ui-sang-ryu.jpg"),
+    dict(ko="박세준", en="Se-Jun Park", role="학부연구생", dept="인공지능학과 3학년",
+         email="20221948@g.deu.ac.kr", photo="images/people/se-jun-park.jpg"),
 ]
 
 LOGO = ('<svg width="34" height="34" viewBox="0 0 100 100" aria-hidden="true">'
