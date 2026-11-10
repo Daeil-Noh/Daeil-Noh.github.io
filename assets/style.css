@@ -133,7 +133,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 
 /* student cards */
 .member{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden}
-.member img{display:block;width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center top;background:#e8ecf8}
+.member img{display:block;width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center;background:#e8ecf8}
 .member .info{padding:16px 18px 18px}
 .member h3{font-size:18px}
 .member h3 small{font-size:13.5px;color:var(--ink-3);font-weight:500;margin-left:6px}
