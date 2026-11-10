@@ -82,7 +82,7 @@ PUBS = [
 STUDENTS = [  # 학생 연구원: 사진은 images/people/ 에 3:4 비율로 저장
     dict(ko="조희준", en="Hee-Jun Cho", role="학부연구생", dept="인공지능학과 4학년",
          email="jhg811515@gmail.com", photo="images/people/hee-jun-cho.jpg"),
-    dict(ko="류의상", en="Ui-Sang Ryu", role="학부연구생", dept="인공지능학과",
+    dict(ko="류의상", en="Ui-Sang Ryu", role="학부연구생", dept="인공지능학과 4학년",
          email="20182366@g.deu.ac.kr", photo="images/people/ui-sang-ryu.jpg"),
 ]
 
