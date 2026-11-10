@@ -96,6 +96,12 @@ CONFS = [
          authors="<b>Dae-Il Noh</b>, Won-Joo Hwang",
          venue="The 18th International Conference on Multimedia Information Technology and Applications (MITA 2022)",
          doi=None, tag="Wireless"),
+    dict(year=2021, title="주파수 기반 블루투스 신호 분류 CNN 모델",
+         authors="<b>노대일</b>, Huu-Trung Hoang, 안수범, 황원주",
+         venue="2021년도 한국멀티미디어학회 춘계학술발표대회", location="대구",
+         award="우수논문상 (한국지능정보사회진흥원장상)",
+         news="https://www.pusan.ac.kr/kor/CMS/Board/Board.do?mCode=MN109&mode=view&mgr_seq=12&board_seq=1464034",
+         doi=None, tag="Wireless"),
     dict(year=2021, title="Radio Frequency-Based Classification of Unmanned Aerial Vehicle Using Convolution Neural Network",
          authors="<b>Dae-Il Noh</b>, Huu-Trung Hoang, Won-Joo Hwang",
          venue="The 17th International Conference on Multimedia Information Technology and Applications (MITA 2021)",
@@ -124,10 +130,12 @@ LOGO = ('<svg width="34" height="34" viewBox="0 0 100 100" aria-hidden="true">'
 
 def pub_item(p, compact=False):
     tag = f'<span class="badge">{p["tag"]}</span>' if p.get("tag") else ""
-    body = (f'<div class="pt">{p["title"]}</div><div class="pa">{p["authors"]}</div>'
+    award = f'<span class="badge award">{p["award"]}</span>' if p.get("award") else ""
+    body = (f'<div class="pt">{p["title"]}{award}</div><div class="pa">{p["authors"]}</div>'
             f'<div class="pv"><i>{p["venue"]}</i>{", " + p["location"] if p.get("location") else ""}, {p["year"]}'
             + (f' · <a href="https://doi.org/{p["doi"]}" target="_blank" rel="noopener">DOI</a>' if p.get("doi") else "")
             + (f' · {p["note"]}' if p.get("note") else "")
+            + (f' · <a href="{p["news"]}" target="_blank" rel="noopener">관련 기사</a>' if p.get("news") else "")
             + f'{tag}</div>')
     if compact:
         return f'<li><div class="yr">{p["year"]}</div><div>{body}</div></li>'

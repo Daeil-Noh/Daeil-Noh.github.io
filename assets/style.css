@@ -155,3 +155,4 @@ h2 .count{font-size:15px;font-weight:700;color:var(--ink-3);margin-left:6px;vert
 .empty{border:1.5px dashed var(--line);border-radius:12px;padding:28px;text-align:center;color:var(--ink-3);font-size:15px}
 .badge.ok{background:#e7f6ee;color:#137a43}
 @media (max-width:720px){.subnav{position:static}.subnav .wrap{padding-top:12px;padding-bottom:12px}}
+.badge.award{background:#fff4d6;color:#8a5a00}
