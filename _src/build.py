@@ -95,7 +95,7 @@ CONFS = [
     dict(year=2024, title="Quantum-based UWB signal classification",
          authors="<b>Dae-Il Noh</b>, Seon-Geun Jeong, Mikio Hasegawa, Hiroo Sekiya, Won-Joo Hwang",
          venue="10th Anniversary Korea-Japan Joint Workshop on Complex Communication Sciences (KJCCS 2024)",
-         location="Beppu, Japan", doi=None, tag="Quantum ML"),
+         location="Beppu, Japan", note="Oral", doi=None, tag="Quantum ML"),
     dict(year=2022, title="Noise-Tolerant Signal Preprocessing Technique for Unmanned Aerial Vehicle Classification",
          authors="<b>Dae-Il Noh</b>, Won-Joo Hwang",
          venue="The 18th International Conference on Multimedia Information Technology and Applications (MITA 2022)",
