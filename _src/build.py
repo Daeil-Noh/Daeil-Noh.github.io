@@ -92,6 +92,10 @@ STUDENTS = [  # 학생 연구원: 사진은 images/people/ 에 3:4 비율로 저
 
 # 학회 발표 논문: PUBS와 같은 형식 (venue에 학회명, 필요하면 location 추가, doi는 없으면 None)
 CONFS = [
+    dict(year=2022, title="Noise-Tolerant Signal Preprocessing Technique for Unmanned Aerial Vehicle Classification",
+         authors="<b>Dae-Il Noh</b>, Won-Joo Hwang",
+         venue="The 18th International Conference on Multimedia Information Technology and Applications (MITA 2022)",
+         doi=None, tag="Wireless"),
     dict(year=2021, title="Radio Frequency-Based Classification of Unmanned Aerial Vehicle Using Convolution Neural Network",
          authors="<b>Dae-Il Noh</b>, Huu-Trung Hoang, Won-Joo Hwang",
          venue="The 17th International Conference on Multimedia Information Technology and Applications (MITA 2021)",
