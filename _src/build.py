@@ -64,28 +64,28 @@ AREAS = [
 PUBS = [
     dict(year=2026, title="Embedding-aware noise modeling of quantum annealing",
          authors="Seon-Geun Jeong, Dinh Cong Mai, <b>Dae-Il Noh</b>, Quoc-Viet Pham, Won-Joo Hwang",
-         venue="Quantum Information Processing", doi="10.1007/s11128-026-05293-z", tag="Quantum Computing"),
+         venue="Quantum Information Processing", idx="SCIE", doi="10.1007/s11128-026-05293-z", tag="Quantum Computing"),
     dict(year=2026, title="Improving performance of asynchronous pulse code multiple access by machine learning-based pulse detection",
          authors="Mayu Horiuchi, Takuya Fujiwara, Ferdinand Peper, Kenji Leibnitz, Naoki Wakamiya, Maki Arai, <b>Dae-Il Noh</b>, Won-Joo Hwang, Jin Nakazato, Mikio Hasegawa",
-         venue="Nonlinear Theory and Its Applications, IEICE (NOLTA)", doi="10.1587/nolta.17.1241", tag="Wireless"),
+         venue="Nonlinear Theory and Its Applications, IEICE (NOLTA)", idx="ESCI", doi="10.1587/nolta.17.1241", tag="Wireless"),
     dict(year=2026, title="GlaucoFormer: A transformer-based model for glaucoma detection and segmentation",
          authors="<b>Dae-Il Noh</b>, Thien-Thanh Dao, Kyeong-Min Park, Seon-Geun Jeong, Won-Joo Hwang",
-         venue="Applied Soft Computing", doi="10.1016/j.asoc.2026.115158", tag="Computer Vision"),
+         venue="Applied Soft Computing", idx="SCIE", doi="10.1016/j.asoc.2026.115158", tag="Computer Vision"),
     dict(year=2025, title="Hybrid Quantum ResNet for Time Series Classification",
          authors="<b>Dae-Il Noh</b>, Seon-Geun Jeong, Won-Joo Hwang",
-         venue="IEEE Transactions on Emerging Topics in Computing", doi="10.1109/TETC.2025.3563944", tag="Quantum ML"),
+         venue="IEEE Transactions on Emerging Topics in Computing", idx="SCIE", doi="10.1109/TETC.2025.3563944", tag="Quantum ML"),
     dict(year=2025, title="Quantum-Annealing-Based Sum Rate Maximization for Multi-UAV-Aided Wireless Networks",
          authors="Seon-Geun Jeong, Pham Dang Anh Duc, Quang Vinh Do, <b>Dae-Il Noh</b>, Nguyen Xuan Tung, Trinh Van Chien, Quoc-Viet Pham, Mikio Hasegawa, Hiroo Sekiya, Won-Joo Hwang",
-         venue="IEEE Internet of Things Journal", doi="10.1109/JIOT.2025.3546645", tag="Quantum Computing"),
+         venue="IEEE Internet of Things Journal", idx="SCIE", doi="10.1109/JIOT.2025.3546645", tag="Quantum Computing"),
     dict(year=2024, title="VT-MCNet: High-Accuracy Automatic Modulation Classification Model Based on Vision Transformer",
          authors="Thien-Thanh Dao, <b>Dae-Il Noh</b>, Quoc-Viet Pham, Mikio Hasegawa, Hiroo Sekiya, Won-Joo Hwang",
-         venue="IEEE Communications Letters", doi="10.1109/LCOMM.2023.3336985", tag="Wireless"),
+         venue="IEEE Communications Letters", idx="SCIE", doi="10.1109/LCOMM.2023.3336985", tag="Wireless"),
     dict(year=2024, title="O2O 서비스를 통한 고혈압, 당뇨 관리 모델 개발",
          authors="이상민, 천동훈, <b>노대일</b>, 박진우, 김윤지, 김영기, 황원주, 강동묵",
-         venue="멀티미디어학회논문지, 27권 1호, pp. 80–90", doi=None, tag=None),
+         venue="멀티미디어학회논문지, 27권 1호, pp. 80–90", idx="KCI", doi=None, tag=None),
     dict(year=2022, title="Signal Preprocessing Technique With Noise-Tolerant for RF-Based UAV Signal Classification",
          authors="<b>Dae-Il Noh</b>, Seon-Geun Jeong, Huu-Trung Hoang, Quoc-Viet Pham, Thien Huynh-The, Mikio Hasegawa, Hiroo Sekiya, Sunyoung Kwon, Sang-Hwa Chung, Won-Joo Hwang",
-         venue="IEEE Access", doi="10.1109/ACCESS.2022.3232036", tag="Wireless"),
+         venue="IEEE Access", idx="SCIE", doi="10.1109/ACCESS.2022.3232036", tag="Wireless"),
 ]
 
 STUDENTS = [  # 학생 연구원: 사진은 images/people/ 에 3:4 비율로 저장
@@ -154,7 +154,8 @@ LOGO = ('<svg width="34" height="34" viewBox="0 0 100 100" aria-hidden="true">'
 def pub_item(p, compact=False):
     tag = f'<span class="badge">{p["tag"]}</span>' if p.get("tag") else ""
     award = f'<span class="badge award">{p["award"]}</span>' if p.get("award") else ""
-    body = (f'<div class="pt">{p["title"]}{award}</div><div class="pa">{p["authors"]}</div>'
+    idx = f'<span class="idx idx-{p["idx"].lower()}">{p["idx"]}</span>' if p.get("idx") else ""
+    body = (f'<div class="pt">{idx}{p["title"]}{award}</div><div class="pa">{p["authors"]}</div>'
             f'<div class="pv"><i>{p["venue"]}</i>{", " + p["location"] if p.get("location") else ""}, {p["year"]}'
             + (f' · <a href="https://doi.org/{p["doi"]}" target="_blank" rel="noopener">DOI</a>' if p.get("doi") else "")
             + (f' · {p["note"]}' if p.get("note") else "")
