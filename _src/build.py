@@ -91,7 +91,12 @@ STUDENTS = [  # 학생 연구원: 사진은 images/people/ 에 3:4 비율로 저
 ]
 
 # 학회 발표 논문: PUBS와 같은 형식 (venue에 학회명, 필요하면 location 추가, doi는 없으면 None)
-CONFS = []
+CONFS = [
+    dict(year=2021, title="Radio Frequency-Based Classification of Unmanned Aerial Vehicle Using Convolution Neural Network",
+         authors="<b>Dae-Il Noh</b>, Huu-Trung Hoang, Won-Joo Hwang",
+         venue="The 17th International Conference on Multimedia Information Technology and Applications (MITA 2021)",
+         location="Seogwipo, Korea", note="Oral", doi=None, tag="Wireless"),
+]
 
 # 특허 (대한민국 등록특허). 주민번호·주소 등 개인정보는 넣지 않는다.
 PATENTS = [
@@ -118,6 +123,7 @@ def pub_item(p, compact=False):
     body = (f'<div class="pt">{p["title"]}</div><div class="pa">{p["authors"]}</div>'
             f'<div class="pv"><i>{p["venue"]}</i>{", " + p["location"] if p.get("location") else ""}, {p["year"]}'
             + (f' · <a href="https://doi.org/{p["doi"]}" target="_blank" rel="noopener">DOI</a>' if p.get("doi") else "")
+            + (f' · {p["note"]}' if p.get("note") else "")
             + f'{tag}</div>')
     if compact:
         return f'<li><div class="yr">{p["year"]}</div><div>{body}</div></li>'
