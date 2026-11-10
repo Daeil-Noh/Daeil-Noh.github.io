@@ -65,6 +65,9 @@ PUBS = [
     dict(year=2026, title="Embedding-aware noise modeling of quantum annealing",
          authors="Seon-Geun Jeong, Dinh Cong Mai, <b>Dae-Il Noh</b>, Quoc-Viet Pham, Won-Joo Hwang",
          venue="Quantum Information Processing", doi="10.1007/s11128-026-05293-z", tag="Quantum Computing"),
+    dict(year=2026, title="Improving performance of asynchronous pulse code multiple access by machine learning-based pulse detection",
+         authors="Mayu Horiuchi, Takuya Fujiwara, Ferdinand Peper, Kenji Leibnitz, Naoki Wakamiya, Maki Arai, <b>Dae-Il Noh</b>, Won-Joo Hwang, Jin Nakazato, Mikio Hasegawa",
+         venue="Nonlinear Theory and Its Applications, IEICE (NOLTA)", doi="10.1587/nolta.17.1241", tag="Wireless"),
     dict(year=2026, title="GlaucoFormer: A transformer-based model for glaucoma detection and segmentation",
          authors="<b>Dae-Il Noh</b>, Thien-Thanh Dao, Kyeong-Min Park, Seon-Geun Jeong, Won-Joo Hwang",
          venue="Applied Soft Computing", doi="10.1016/j.asoc.2026.115158", tag="Computer Vision"),
@@ -77,6 +80,9 @@ PUBS = [
     dict(year=2024, title="VT-MCNet: High-Accuracy Automatic Modulation Classification Model Based on Vision Transformer",
          authors="Thien-Thanh Dao, <b>Dae-Il Noh</b>, Quoc-Viet Pham, Mikio Hasegawa, Hiroo Sekiya, Won-Joo Hwang",
          venue="IEEE Communications Letters", doi="10.1109/LCOMM.2023.3336985", tag="Wireless"),
+    dict(year=2024, title="O2O 서비스를 통한 고혈압, 당뇨 관리 모델 개발",
+         authors="이상민, 천동훈, <b>노대일</b>, 박진우, 김윤지, 김영기, 황원주, 강동묵",
+         venue="멀티미디어학회논문지, 27권 1호, pp. 80–90", doi=None, tag=None),
     dict(year=2022, title="Signal Preprocessing Technique With Noise-Tolerant for RF-Based UAV Signal Classification",
          authors="<b>Dae-Il Noh</b>, Seon-Geun Jeong, Huu-Trung Hoang, Quoc-Viet Pham, Thien Huynh-The, Mikio Hasegawa, Hiroo Sekiya, Sunyoung Kwon, Sang-Hwa Chung, Won-Joo Hwang",
          venue="IEEE Access", doi="10.1109/ACCESS.2022.3232036", tag="Wireless"),
@@ -95,6 +101,9 @@ STUDENTS = [  # 학생 연구원: 사진은 images/people/ 에 3:4 비율로 저
 
 # 학회 발표 논문: PUBS와 같은 형식 (venue에 학회명, 필요하면 location 추가, doi는 없으면 None)
 CONFS = [
+    dict(year=2025, title="Robust Machine Learning-Based Chirp Signal Detection for Asynchronous Pulse Code Multiple Access in Low-SNR Massive IoT Environments",
+         authors="Mayu Horiuchi, Ferdinand Peper, Kenji Leibnitz, Naoki Wakamiya, Jin Nakazato, Maki Arai, <b>Dae-Il Noh</b>, Won-Joo Hwang, Mikio Hasegawa",
+         venue="IEICE Technical Report, vol. 125, no. 190, pp. 24–29", doi=None, tag="Wireless"),
     dict(year=2024, title="Quantum-based UWB signal classification",
          authors="<b>Dae-Il Noh</b>, Seon-Geun Jeong, Mikio Hasegawa, Hiroo Sekiya, Won-Joo Hwang",
          venue="10th Anniversary Korea-Japan Joint Workshop on Complex Communication Sciences (KJCCS 2024)",
