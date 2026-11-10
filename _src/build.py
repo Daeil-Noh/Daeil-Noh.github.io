@@ -101,6 +101,18 @@ STUDENTS = [  # 학생 연구원: 사진은 images/people/ 에 3:4 비율로 저
 
 # 학회 발표 논문: PUBS와 같은 형식 (venue에 학회명, 필요하면 location 추가, doi는 없으면 None)
 CONFS = [
+    dict(year=2026, title="출력 해상도와 업샘플링 방식에 따른 부품 중심 추정 성능 비교",
+         authors="류의상, <b>노대일</b>",
+         venue="2026년 한국제조데이터인공지능학회 추계 종합학술대회", location="제주", award="우수논문상", doi=None, tag="Computer Vision"),
+    dict(year=2026, title="RANSAC 검출 정보와 잔차 학습을 이용한 렌즈 중심점 추정",
+         authors="조희준, <b>노대일</b>",
+         venue="2026년 한국제조데이터인공지능학회 추계 종합학술대회", location="제주", award="우수논문상", doi=None, tag="Computer Vision"),
+    dict(year=2026, title="다중 원형 구조를 활용한 FRST 및 신뢰도 가중 원 적합 기반 렌즈 중심 추정",
+         authors="강보연, <b>노대일</b>",
+         venue="2026년 한국제조데이터인공지능학회 추계 종합학술대회", location="제주", award="우수논문상", doi=None, tag="Computer Vision"),
+    dict(year=2026, title="제조 환경 안전 관리를 위한 분산 Wi-Fi CSI 핑거프린팅 기반 실시간 재실 및 위치 추정 시스템",
+         authors="정재원, 박세준, 김건희, 이현준, <b>노대일</b>",
+         venue="2026년 한국제조데이터인공지능학회 추계 종합학술대회", location="제주", award="우수논문상", doi=None, tag="Wireless"),
     dict(year=2025, title="ML-Based Receiver Design for Chirp-Based Asynchronous Pulse Code Multiple Access for Massive IoT",
          authors="Mayu Horiuchi, Ferdinand Peper, Kenji Leibnitz, Naoki Wakamiya, Jin Nakazato, Maki Arai, <b>Dae-Il Noh</b>, Won-Joo Hwang, Mikio Hasegawa",
          venue="2025 Sixteenth International Conference on Ubiquitous and Future Networks (ICUFN)",
