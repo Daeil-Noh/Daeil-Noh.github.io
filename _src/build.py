@@ -92,6 +92,10 @@ STUDENTS = [  # 학생 연구원: 사진은 images/people/ 에 3:4 비율로 저
 
 # 학회 발표 논문: PUBS와 같은 형식 (venue에 학회명, 필요하면 location 추가, doi는 없으면 None)
 CONFS = [
+    dict(year=2024, title="Quantum-based UWB signal classification",
+         authors="<b>Dae-Il Noh</b>, Seon-Geun Jeong, Mikio Hasegawa, Hiroo Sekiya, Won-Joo Hwang",
+         venue="10th Anniversary Korea-Japan Joint Workshop on Complex Communication Sciences (KJCCS 2024)",
+         location="Beppu, Japan", doi=None, tag="Quantum ML"),
     dict(year=2022, title="Noise-Tolerant Signal Preprocessing Technique for Unmanned Aerial Vehicle Classification",
          authors="<b>Dae-Il Noh</b>, Won-Joo Hwang",
          venue="The 18th International Conference on Multimedia Information Technology and Applications (MITA 2022)",
