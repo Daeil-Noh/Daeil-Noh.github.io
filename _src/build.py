@@ -98,7 +98,7 @@ CONFS = [
          location="Beppu, Japan", note="Oral", doi=None, tag="Quantum ML"),
     dict(year=2023, title="UWB LoS, NLoS 신호 탐지",
          authors="<b>노대일</b>, 정선근, 황원주",
-         venue="2023 한국소프트웨어종합학술대회 (KSC 2023)", note="Poster", doi=None, tag="Wireless"),
+         venue="2023 한국소프트웨어종합학술대회 (KSC 2023)", location="부산", note="Poster", doi=None, tag="Wireless"),
     dict(year=2022, title="Noise-Tolerant Signal Preprocessing Technique for Unmanned Aerial Vehicle Classification",
          authors="<b>Dae-Il Noh</b>, Won-Joo Hwang",
          venue="The 18th International Conference on Multimedia Information Technology and Applications (MITA 2022)",
