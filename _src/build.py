@@ -312,16 +312,24 @@ def member_card(m):
 
 def people():
     members = "".join(member_card(m) for m in STUDENTS)
+    pi_tags = "".join(f'<a href="research.html#{a["id"]}">{a["ko"]}</a>' for a in AREAS)
     content = page_head("People", "구성원") + f"""<section>
   <div class="wrap">
     <div class="head"><div><div class="sub">Principal Investigator</div><h2>지도교수</h2></div></div>
-    <div class="pi">
+    <div class="pi pi-main">
       <img class="avatar" src="images/profile.jpg" alt="노대일 교수">
-      <div>
+      <div class="pi-body">
         <h3>노대일<small>Dae-Il Noh</small></h3>
         <div class="role">조교수 · Assistant Professor</div>
+        <div class="dept">동의대학교 인공지능학과 · {LAB_KO}</div>
+        <div class="pi-stats">
+          <a href="publications.html#journal"><b>{len(PUBS)}</b><span>저널 논문</span></a>
+          <a href="publications.html#conference"><b>{len(CONFS)}</b><span>학술대회 논문</span></a>
+          <a href="publications.html#patent"><b>{len(PATENTS)}</b><span>등록 특허</span></a>
+        </div>
+        <div class="pi-k">연구 분야</div>
+        <div class="pi-tags">{pi_tags}</div>
         <ul>
-          <li>동의대학교 인공지능학과</li>
           <li>산학협력관 804호</li>
           <li><a href="mailto:{EMAIL}">{EMAIL}</a></li>
         </ul>
