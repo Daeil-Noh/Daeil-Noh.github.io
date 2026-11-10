@@ -93,8 +93,18 @@ STUDENTS = [  # 학생 연구원: 사진은 images/people/ 에 3:4 비율로 저
 # 학회 발표 논문: PUBS와 같은 형식 (venue에 학회명, 필요하면 location 추가, doi는 없으면 None)
 CONFS = []
 
-# 특허: dict(title=, inventors=, number="10-0000000", date="2026.00.00", status="등록"|"출원", country="대한민국")
-PATENTS = []
+# 특허 (대한민국 등록특허). 주민번호·주소 등 개인정보는 넣지 않는다.
+PATENTS = [
+    dict(title="시각 이상 여부 진단을 위해 시신경 구조를 세그멘팅하는 AI 기반 영상처리 장치",
+         inventors="박경민, <b>노대일</b>, 김동현", reg_no="10-2789575", reg_date="2025.03.27",
+         app_no="10-2024-0201821", app_date="2024.12.31", patentee="(주)씨앤피", tag="Computer Vision"),
+    dict(title="노이즈 내성을 갖는 신호 분류 방법 및 장치, 이를 이용한 무인항공기 신호 분류 시스템",
+         inventors="황원주, <b>노대일</b>", reg_no="10-2591634", reg_date="2023.10.16",
+         app_no="10-2021-0175065", app_date="2021.12.08", patentee="부산대학교 산학협력단", tag="Wireless"),
+    dict(title="스마트 맥주 디스펜서",
+         inventors="<b>노대일</b>, 조성호, 주환이", reg_no="10-2381940", reg_date="2022.03.29",
+         app_no="10-2020-0023987", app_date="2020.02.27", patentee="노대일", tag=None),
+]
 
 LOGO = ('<svg width="34" height="34" viewBox="0 0 100 100" aria-hidden="true">'
         '<ellipse cx="50" cy="50" rx="40" ry="14" fill="none" stroke="#3a4fd8" stroke-width="5" opacity=".4"/>'
@@ -280,9 +290,11 @@ def by_year(items, render):
 
 
 def patent_item(p):
-    status = f'<span class="badge {"ok" if p["status"] == "등록" else ""}">{p["status"]}</span>'
-    return (f'<li><div class="pt">{p["title"]}</div><div class="pa">{p["inventors"]}</div>'
-            f'<div class="pv">{p.get("country", "대한민국")} {p["status"]}번호 {p["number"]} · {p["date"]}{status}</div></li>')
+    tag = f'<span class="badge">{p["tag"]}</span>' if p.get("tag") else ""
+    return (f'<li><div class="pt">{p["title"]}<span class="badge ok">등록</span>{tag}</div>'
+            f'<div class="pa">발명자: {p["inventors"]}</div>'
+            f'<div class="pv">대한민국 특허 제{p["reg_no"]}호 · 등록일 {p["reg_date"]} · '
+            f'출원번호 {p["app_no"]} ({p["app_date"]}) · 특허권자 {p["patentee"]}</div></li>')
 
 
 def pub_section(sid, sub, h2, count, body, empty):
@@ -298,7 +310,7 @@ def publications():
                           "등록된 저널 논문이 없습니다.")
     conf = pub_section("conference", "Conference", "학술대회 논문", len(CONFS), by_year(CONFS, pub_item),
                        "학술대회 발표 논문 목록을 준비 중입니다.")
-    pats = sorted(PATENTS, key=lambda p: p["date"], reverse=True)
+    pats = sorted(PATENTS, key=lambda p: p["reg_date"], reverse=True)
     patent = pub_section("patent", "Patent", "특허", len(PATENTS),
                          f'<ul class="pubs">{"".join(patent_item(p) for p in pats)}</ul>', "특허 목록을 준비 중입니다.")
     content = page_head("Publications", "연구 성과",
