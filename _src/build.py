@@ -118,7 +118,7 @@ CONFS = [
     dict(year=2022, title="Noise-Tolerant Signal Preprocessing Technique for Unmanned Aerial Vehicle Classification",
          authors="<b>Dae-Il Noh</b>, Won-Joo Hwang",
          venue="The 18th International Conference on Multimedia Information Technology and Applications (MITA 2022)",
-         location="Jeju, Korea", doi=None, tag="Wireless"),
+         location="Jeju, Korea", note="Oral", doi=None, tag="Wireless"),
     dict(year=2021, title="주파수 기반 블루투스 신호 분류 CNN 모델",
          authors="<b>노대일</b>, Huu-Trung Hoang, 안수범, 황원주",
          venue="2021년도 한국멀티미디어학회 춘계학술발표대회", location="대구", note="Oral",
