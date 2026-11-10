@@ -85,7 +85,7 @@ PUBS = [
          venue="멀티미디어학회논문지, 27권 1호, pp. 80–90", idx="KCI", doi=None, tag=None),
     dict(year=2022, title="Signal Preprocessing Technique With Noise-Tolerant for RF-Based UAV Signal Classification",
          authors="<b>Dae-Il Noh</b>, Seon-Geun Jeong, Huu-Trung Hoang, Quoc-Viet Pham, Thien Huynh-The, Mikio Hasegawa, Hiroo Sekiya, Sunyoung Kwon, Sang-Hwa Chung, Won-Joo Hwang",
-         venue="IEEE Access", idx="SCIE", doi="10.1109/ACCESS.2022.3232036", tag="Wireless"),
+         venue="IEEE Access", idx="SCIE", corr=["Sunyoung Kwon"], doi="10.1109/ACCESS.2022.3232036", tag="Wireless"),
 ]
 
 STUDENTS = [  # 학생 연구원: 사진은 images/people/ 에 3:4 비율로 저장
@@ -170,7 +170,10 @@ def pub_item(p, compact=False):
     idxs = [idxs] if isinstance(idxs, str) else idxs  # 색인이 여러 개면 리스트로 (예: ["ESCI", "Scopus"])
     idx = "".join(f'<span class="idx idx-{i.lower()}">{i}</span>' for i in idxs)
     # 마지막 저자 = 교신저자(*)
-    authors = p["authors"] + '<sup class="corr" title="교신저자">*</sup>'
+    star = '<sup class="corr" title="교신저자">*</sup>'
+    authors = p["authors"] + star
+    for name in p.get("corr", []):  # 공동 교신저자 (마지막 저자 외)
+        authors = authors.replace(name, name + star, 1)
     body = (f'<div class="pt">{idx}{p["title"]}{award}</div><div class="pa">{authors}</div>'
             f'<div class="pv"><i>{p["venue"]}</i>{", " + p["location"] if p.get("location") else ""}, {p["year"]}'
             + (f' · <a href="https://doi.org/{p["doi"]}" target="_blank" rel="noopener">DOI</a>' if p.get("doi") else "")
