@@ -67,7 +67,7 @@ PUBS = [
          venue="Quantum Information Processing", idx="SCIE", doi="10.1007/s11128-026-05293-z", tag="Quantum Computing"),
     dict(year=2026, title="Improving performance of asynchronous pulse code multiple access by machine learning-based pulse detection",
          authors="Mayu Horiuchi, Takuya Fujiwara, Ferdinand Peper, Kenji Leibnitz, Naoki Wakamiya, Maki Arai, <b>Dae-Il Noh</b>, Won-Joo Hwang, Jin Nakazato, Mikio Hasegawa",
-         venue="Nonlinear Theory and Its Applications, IEICE (NOLTA)", idx="ESCI", doi="10.1587/nolta.17.1241", tag="Wireless"),
+         venue="Nonlinear Theory and Its Applications, IEICE (NOLTA)", idx=["ESCI", "Scopus"], doi="10.1587/nolta.17.1241", tag="Wireless"),
     dict(year=2026, title="GlaucoFormer: A transformer-based model for glaucoma detection and segmentation",
          authors="<b>Dae-Il Noh</b>, Thien-Thanh Dao, Kyeong-Min Park, Seon-Geun Jeong, Won-Joo Hwang",
          venue="Applied Soft Computing", idx="SCIE", doi="10.1016/j.asoc.2026.115158", tag="Computer Vision"),
@@ -154,7 +154,9 @@ LOGO = ('<svg width="34" height="34" viewBox="0 0 100 100" aria-hidden="true">'
 def pub_item(p, compact=False):
     tag = f'<span class="badge">{p["tag"]}</span>' if p.get("tag") else ""
     award = f'<span class="badge award">{p["award"]}</span>' if p.get("award") else ""
-    idx = f'<span class="idx idx-{p["idx"].lower()}">{p["idx"]}</span>' if p.get("idx") else ""
+    idxs = p.get("idx") or []
+    idxs = [idxs] if isinstance(idxs, str) else idxs  # 색인이 여러 개면 리스트로 (예: ["ESCI", "Scopus"])
+    idx = "".join(f'<span class="idx idx-{i.lower()}">{i}</span>' for i in idxs)
     body = (f'<div class="pt">{idx}{p["title"]}{award}</div><div class="pa">{p["authors"]}</div>'
             f'<div class="pv"><i>{p["venue"]}</i>{", " + p["location"] if p.get("location") else ""}, {p["year"]}'
             + (f' · <a href="https://doi.org/{p["doi"]}" target="_blank" rel="noopener">DOI</a>' if p.get("doi") else "")

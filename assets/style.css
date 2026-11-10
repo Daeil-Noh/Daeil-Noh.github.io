@@ -156,6 +156,7 @@ h2 .count{font-size:15px;font-weight:700;color:var(--ink-3);margin-left:6px;vert
 .badge.ok{background:#e7f6ee;color:#137a43}
 @media (max-width:720px){.subnav{position:static}.subnav .wrap{padding-top:12px;padding-bottom:12px}}
 .badge.award{background:#fff4d6;color:#8a5a00}
-.idx{display:inline-block;font-size:11.5px;font-weight:800;letter-spacing:.04em;padding:2px 7px;border-radius:5px;margin-right:8px;vertical-align:2px;color:#fff;background:#0b2265}
+.idx{display:inline-block;font-size:11.5px;font-weight:800;letter-spacing:.04em;padding:2px 7px;border-radius:5px;margin-right:6px;vertical-align:2px;color:#fff;background:#0b2265}
 .idx-esci{background:#3a4fd8}
 .idx-kci{background:#0f766e}
+.idx-scopus{background:#e8590c}
