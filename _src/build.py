@@ -86,6 +86,8 @@ STUDENTS = [  # 학생 연구원: 사진은 images/people/ 에 3:4 비율로 저
          email="20182366@g.deu.ac.kr", photo="images/people/ui-sang-ryu.jpg"),
     dict(ko="박세준", en="Se-Jun Park", role="학부연구생", dept="인공지능학과 3학년",
          email="20221948@g.deu.ac.kr", photo="images/people/se-jun-park.jpg"),
+    dict(ko="정재원", en="Jaewon Chung", role="학부연구생", dept="인공지능학과 3학년",
+         email="20243242@office.deu.ac.kr", photo=None),  # 사진 받으면 images/people/jaewon-chung.jpg
 ]
 
 LOGO = ('<svg width="34" height="34" viewBox="0 0 100 100" aria-hidden="true">'
@@ -218,12 +220,17 @@ def research():
 
 
 # ---------- People ----------
+def member_card(m):
+    photo = (f'<img src="{m["photo"]}" alt="{m["ko"]}" loading="lazy">' if m["photo"]
+             else f'<div class="photo-ph" aria-hidden="true">{m["ko"][0]}</div>')
+    return (f'<div class="member">{photo}'
+            f'<div class="info"><h3>{m["ko"]}<small>{m["en"]}</small></h3>'
+            f'<div class="role">{m["role"]}</div><div class="dept">{m["dept"]}</div>'
+            f'<a href="mailto:{m["email"]}">{m["email"]}</a></div></div>')
+
+
 def people():
-    members = "".join(
-        f'<div class="member"><img src="{m['photo']}" alt="{m['ko']}" loading="lazy">'
-        f'<div class="info"><h3>{m['ko']}<small>{m['en']}</small></h3>'
-        f'<div class="role">{m['role']}</div><div class="dept">{m['dept']}</div>'
-        f'<a href="mailto:{m['email']}">{m['email']}</a></div></div>' for m in STUDENTS)
+    members = "".join(member_card(m) for m in STUDENTS)
     content = page_head("People", "구성원") + f"""<section>
   <div class="wrap">
     <div class="head"><div><div class="sub">Principal Investigator</div><h2>지도교수</h2></div></div>
