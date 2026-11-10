@@ -3,126 +3,30 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>양자컴퓨팅·AI 융합연구실 | Quantum Computing·AI Convergence Lab</title>
+<title>양자컴퓨팅·AI 융합연구실</title>
 <meta name="description" content="동의대학교 인공지능학과 양자컴퓨팅·AI 융합연구실 — 양자 컴퓨팅, 양자 머신러닝, 컴퓨터 비전, 무선 통신, 스마트 팩토리">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://daeil-noh.github.io/">
-<meta property="og:title" content="양자컴퓨팅·AI 융합연구실 | Quantum Computing·AI Convergence Lab">
-<meta property="og:description" content="동의대학교 인공지능학과 — 양자 컴퓨팅, 양자 머신러닝, 컴퓨터 비전, 무선 통신, 스마트 팩토리">
+<meta property="og:title" content="양자컴퓨팅·AI 융합연구실">
+<meta property="og:description" content="동의대학교 인공지능학과 양자컴퓨팅·AI 융합연구실 — 양자 컴퓨팅, 양자 머신러닝, 컴퓨터 비전, 무선 통신, 스마트 팩토리">
 <meta property="og:image" content="https://daeil-noh.github.io/images/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://cdn.jsdelivr.net">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
-<style>
-  :root{
-    --ink:#0f1a2b; --ink-2:#44526a; --ink-3:#7a869a;
-    --line:#e4e8ef; --bg:#ffffff; --bg-2:#f5f7fa;
-    --accent:#3a4fd8; --accent-2:#7b5cf0;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  body{font-family:Pretendard,-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;color:var(--ink);background:var(--bg);line-height:1.65;-webkit-font-smoothing:antialiased;word-break:keep-all}
-  a{color:var(--accent);text-decoration:none}
-  a:hover{text-decoration:underline}
-  .wrap{max-width:1040px;margin:0 auto;padding:0 24px}
-
-  /* nav */
-  header.nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-  header.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
-  .brand{font-weight:700;color:var(--ink);font-size:15px;letter-spacing:-.01em}
-  .brand:hover{text-decoration:none}
-  .brand span{color:var(--accent)}
-  nav a{color:var(--ink-2);font-size:14px;margin-left:24px;font-weight:500}
-  nav a:hover{color:var(--ink);text-decoration:none}
-
-  /* hero */
-  .hero{position:relative;overflow:hidden;background:#0b1224;color:#fff;padding:110px 0 100px}
-  .hero canvas{position:absolute;inset:0;width:100%;height:100%;opacity:.55}
-  .hero .wrap{position:relative}
-  .eyebrow{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#a9b6ff;font-weight:600}
-  .hero h1{font-size:clamp(30px,5vw,48px);line-height:1.2;letter-spacing:-.025em;margin:14px 0 6px;font-weight:800}
-  .hero .en{font-size:clamp(16px,2.2vw,20px);color:#c8d0e6;font-weight:500}
-  .hero p.lead{max-width:620px;margin-top:26px;color:#d6dcec;font-size:16.5px}
-  .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:30px}
-  .tags span{border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.06);padding:6px 13px;border-radius:999px;font-size:13.5px;color:#e8ecf8}
-
-  /* sections */
-  section{padding:84px 0;border-bottom:1px solid var(--line)}
-  section.alt{background:var(--bg-2)}
-  h2{font-size:28px;letter-spacing:-.02em;font-weight:800}
-  .sub{color:var(--ink-3);font-size:14px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px}
-  .head{margin-bottom:38px}
-  .head p{color:var(--ink-2);margin-top:10px;max-width:680px}
-
-  /* research */
-  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px}
-  .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:26px}
-  .card .ic{width:40px;height:40px;border-radius:10px;display:grid;place-items:center;background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff;margin-bottom:16px}
-  .card h3{font-size:18px;letter-spacing:-.01em}
-  .card h3 small{display:block;font-size:13px;color:var(--ink-3);font-weight:500;margin-top:2px}
-  .card p{color:var(--ink-2);font-size:14.5px;margin-top:10px}
-
-  /* people */
-  .pi{display:flex;gap:28px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:14px;padding:28px}
-  .avatar{flex:none;width:132px;height:176px;border-radius:12px;object-fit:cover;object-position:center top;background:#e8ecf8}
-  .pi h3{font-size:22px}
-  .pi h3 small{font-size:15px;color:var(--ink-3);font-weight:500;margin-left:6px}
-  .pi .role{color:var(--accent);font-weight:600;font-size:14px;margin-top:2px}
-  .pi ul{list-style:none;margin-top:14px;color:var(--ink-2);font-size:14.5px}
-  .pi li{margin:3px 0}
-  .links{margin-top:14px;display:flex;gap:10px;flex-wrap:wrap}
-  .links a{font-size:13.5px;border:1px solid var(--line);padding:6px 12px;border-radius:8px;color:var(--ink-2);font-weight:500}
-  .links a:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
-  .members{margin-top:22px;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}
-  .recruit{margin-top:22px;border:1.5px dashed #c5cdf7;background:#f6f7ff;border-radius:14px;padding:22px 26px;color:var(--ink-2);font-size:15px}
-  .recruit b{color:var(--ink)}
-
-  /* publications */
-  .pubs{list-style:none;counter-reset:p}
-  .pubs li{display:grid;grid-template-columns:64px 1fr;gap:18px;padding:20px 0;border-top:1px solid var(--line)}
-  .pubs li:last-child{border-bottom:1px solid var(--line)}
-  .yr{font-weight:700;color:var(--ink-3);font-size:15px;padding-top:1px}
-  .pt{font-weight:700;font-size:16px;letter-spacing:-.005em;color:var(--ink)}
-  .pa{color:var(--ink-2);font-size:14px;margin-top:4px}
-  .pa b{color:var(--ink);font-weight:700}
-  .pv{font-size:14px;margin-top:4px;color:var(--ink-2)}
-  .pv i{color:var(--ink)}
-  .badge{display:inline-block;font-size:11.5px;font-weight:700;padding:2px 8px;border-radius:6px;background:#eef0ff;color:var(--accent);margin-left:6px;vertical-align:2px}
-  .more{margin-top:26px;font-size:15px}
-
-  /* contact */
-  .contact{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-  .contact .card p{font-size:15.5px;color:var(--ink)}
-  .contact .card .k{font-size:13px;color:var(--ink-3);font-weight:600;letter-spacing:.06em;text-transform:uppercase}
-
-  footer{padding:34px 0;color:var(--ink-3);font-size:13.5px}
-
-  @media (max-width:720px){
-    nav{display:none}
-    .pi{flex-direction:column}
-    .contact{grid-template-columns:1fr}
-    .pubs li{grid-template-columns:1fr;gap:4px}
-    section{padding:64px 0}
-    .hero{padding:80px 0 70px}
-  }
-</style>
+<link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-
 <header class="nav">
   <div class="wrap">
-    <a class="brand" href="#">QC·AI <span>Lab</span></a>
-    <nav>
-      <a href="#research">Research</a>
-      <a href="#people">People</a>
-      <a href="#publications">Publications</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <a class="brand" href="index.html"><svg width="34" height="34" viewBox="0 0 100 100" aria-hidden="true"><ellipse cx="50" cy="50" rx="40" ry="14" fill="none" stroke="#3a4fd8" stroke-width="5" opacity=".4"/><circle cx="50" cy="50" r="40" fill="none" stroke="#3a4fd8" stroke-width="8"/><line x1="50" y1="50" x2="74" y2="26" stroke="#3a4fd8" stroke-width="8" stroke-linecap="round"/><circle cx="78" cy="22" r="11" fill="#7b5cf0"/></svg><span>QC·AI Lab<small>양자컴퓨팅·AI 융합연구실</small></span></a>
+    <nav class="menu" aria-label="주요 메뉴"><a href="index.html" aria-current="page">Home</a><a href="research.html">Research</a><a href="people.html">People</a><a href="publications.html">Publications</a><a href="contact.html">Contact</a></nav>
   </div>
 </header>
-
+<main>
 <div class="hero">
   <canvas id="qbits" aria-hidden="true"></canvas>
   <div class="wrap">
@@ -130,182 +34,36 @@
     <h1>양자컴퓨팅·AI 융합연구실</h1>
     <div class="en">Quantum Computing·AI Convergence Lab</div>
     <p class="lead">양자 컴퓨팅과 인공지능의 접점에서 새로운 학습 모델을 연구하고, 이를 무선 통신과 제조 현장의 실제 문제에 적용합니다.</p>
-    <div class="tags">
-      <span>Quantum Computing</span><span>Quantum Machine Learning</span><span>Computer Vision</span><span>Wireless Communication</span><span>Smart Factory</span>
-    </div>
+    <div class="tags"><a href="research.html#quantum-computing">Quantum Computing</a><a href="research.html#quantum-ml">Quantum Machine Learning</a><a href="research.html#computer-vision">Computer Vision</a><a href="research.html#wireless">Wireless Communication</a><a href="research.html#smart-factory">Smart Factory</a></div>
   </div>
 </div>
-
-<section id="research">
+<section>
   <div class="wrap">
-    <div class="head">
-      <div class="sub">Research</div>
-      <h2>연구 분야</h2>
-      <p>양자 알고리즘과 딥러닝을 결합한 하이브리드 모델을 핵심으로, 통신·비전·제조 분야의 응용 연구를 함께 수행합니다.</p>
-    </div>
-    <div class="grid">
-      <div class="card">
-        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="2"/><ellipse cx="12" cy="12" rx="10" ry="4"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(120 12 12)"/></svg></div>
-        <h3>양자 컴퓨팅<small>Quantum Computing</small></h3>
-        <p>양자 회로와 양자 어닐링을 활용해 기존 컴퓨터로 풀기 어려운 최적화 문제를 효율적으로 해결하는 방법을 연구합니다.</p>
-      </div>
-      <div class="card">
-        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="5" cy="6" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="19" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><path d="M7 6l3 5M7 18l3-5M14 12h3"/></svg></div>
-        <h3>양자 머신러닝<small>Quantum Machine Learning</small></h3>
-        <p>변분 양자 회로(VQC)와 고전 신경망을 결합한 하이브리드 양자-고전 모델을 설계하고, 시계열·이미지 분류 등에 적용합니다.</p>
-      </div>
-      <div class="card">
-        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></div>
-        <h3>컴퓨터 비전<small>Computer Vision</small></h3>
-        <p>Transformer 기반 비전 모델로 의료 영상 분석, 객체 검출·분할 등 시각 인식 문제를 연구합니다.</p>
-      </div>
-      <div class="card">
-        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0"/><circle cx="12" cy="19.5" r="1"/><path d="M1.5 9a15 15 0 0 1 21 0"/></svg></div>
-        <h3>무선 통신<small>Wireless Communication</small></h3>
-        <p>딥러닝 기반 자동 변조 분류, RF 신호 기반 UAV 탐지, 다중 UAV 네트워크 최적화 등 AI for Wireless 연구를 수행합니다.</p>
-      </div>
-      <div class="card">
-        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 20V9l6 4V9l6 4V5h8v15z"/><path d="M6 17h2M11 17h2M16 17h2"/></svg></div>
-        <h3>스마트 팩토리<small>Smart Factory</small></h3>
-        <p>제조 현장의 센서·영상 데이터를 AI로 분석하여 품질 검사, 이상 탐지, 공정 최적화에 활용하는 연구를 진행합니다.</p>
-      </div>
+    <div class="head"><div><div class="sub">Research</div><h2>연구 분야</h2></div><a class="more-link" href="research.html">자세히 보기 →</a></div>
+    <div class="grid"><a class="card" href="research.html#quantum-computing"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="2"/><ellipse cx="12" cy="12" rx="10" ry="4"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(120 12 12)"/></svg></div><h3>양자 컴퓨팅<small>Quantum Computing</small></h3><p>양자 회로와 양자 어닐링으로 기존 컴퓨터가 풀기 어려운 최적화 문제를 효율적으로 해결합니다.</p></a><a class="card" href="research.html#quantum-ml"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="5" cy="6" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="19" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><path d="M7 6l3 5M7 18l3-5M14 12h3"/></svg></div><h3>양자 머신러닝<small>Quantum Machine Learning</small></h3><p>변분 양자 회로(VQC)와 신경망을 결합한 하이브리드 양자-고전 모델을 설계합니다.</p></a><a class="card" href="research.html#computer-vision"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></div><h3>컴퓨터 비전<small>Computer Vision</small></h3><p>Transformer 기반 비전 모델로 의료 영상 분석, 객체 검출·분할 문제를 연구합니다.</p></a><a class="card" href="research.html#wireless"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0"/><circle cx="12" cy="19.5" r="1"/><path d="M1.5 9a15 15 0 0 1 21 0"/></svg></div><h3>무선 통신<small>Wireless Communication</small></h3><p>자동 변조 분류, RF 기반 UAV 탐지 등 AI for Wireless 연구를 수행합니다.</p></a><a class="card" href="research.html#smart-factory"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 20V9l6 4V9l6 4V5h8v15z"/><path d="M6 17h2M11 17h2M16 17h2"/></svg></div><h3>스마트 팩토리<small>Smart Factory</small></h3><p>제조 현장의 센서·영상 데이터를 AI로 분석해 품질 검사와 이상 탐지에 활용합니다.</p></a></div>
+  </div>
+</section>
+<section class="alt">
+  <div class="wrap">
+    <div class="head"><div><div class="sub">Publications</div><h2>최근 논문</h2></div><a class="more-link" href="publications.html">전체 논문 →</a></div>
+    <ul class="pubs compact"><li><div class="yr">2026</div><div><div class="pt">GlaucoFormer: A transformer-based model for glaucoma detection and segmentation</div><div class="pa"><b>Dae-Il Noh</b>, Thien-Thanh Dao, Kyeong-Min Park, Seon-Geun Jeong, Won-Joo Hwang</div><div class="pv"><i>Applied Soft Computing</i>, 2026 · <a href="https://doi.org/10.1016/j.asoc.2026.115158" target="_blank" rel="noopener">DOI</a><span class="badge">Computer Vision</span></div></div></li><li><div class="yr">2025</div><div><div class="pt">Hybrid Quantum ResNet for Time Series Classification</div><div class="pa"><b>Dae-Il Noh</b>, Seon-Geun Jeong, Won-Joo Hwang</div><div class="pv"><i>IEEE Transactions on Emerging Topics in Computing</i>, 2025 · <a href="https://doi.org/10.1109/TETC.2025.3563944" target="_blank" rel="noopener">DOI</a><span class="badge">Quantum ML</span></div></div></li><li><div class="yr">2025</div><div><div class="pt">Quantum-Annealing-Based Sum Rate Maximization for Multi-UAV-Aided Wireless Networks</div><div class="pa">Seon-Geun Jeong, Pham Dang Anh Duc, Quang Vinh Do, <b>Dae-Il Noh</b>, Nguyen Xuan Tung, Trinh Van Chien, Quoc-Viet Pham, Mikio Hasegawa, Hiroo Sekiya, Won-Joo Hwang</div><div class="pv"><i>IEEE Internet of Things Journal</i>, 2025 · <a href="https://doi.org/10.1109/JIOT.2025.3546645" target="_blank" rel="noopener">DOI</a><span class="badge">Quantum Computing</span></div></div></li></ul>
+  </div>
+</section>
+<section>
+  <div class="wrap">
+    <div class="cta">
+      <div><h2>학부연구생 모집 중</h2><p>양자 컴퓨팅과 AI 연구에 관심 있는 학생을 기다립니다.</p></div>
+      <a class="btn" href="people.html#join">지원 안내 보기</a>
     </div>
   </div>
 </section>
-
-<section id="people" class="alt">
-  <div class="wrap">
-    <div class="head">
-      <div class="sub">People</div>
-      <h2>구성원</h2>
-    </div>
-
-    <div class="pi">
-      <img class="avatar" src="images/profile.jpg" alt="노대일 교수">
-      <div>
-        <h3>노대일<small>Dae-Il Noh</small></h3>
-        <div class="role">조교수 · Assistant Professor</div>
-        <ul>
-          <li>동의대학교 인공지능학과</li>
-          <li>산학협력관 804호</li>
-          <li><a href="mailto:daeil.noh@deu.ac.kr">daeil.noh@deu.ac.kr</a></li>
-        </ul>
-        <div class="links">
-          <a href="https://scholar.google.com/citations?user=Ttsq5WkAAAAJ&hl=ko" target="_blank" rel="noopener">Google Scholar</a>
-          <a href="https://orcid.org/0000-0002-6586-5780" target="_blank" rel="noopener">ORCID</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- 학생 구성원이 생기면 여기에 카드로 추가 -->
-    <div class="members"></div>
-
-    <div class="recruit">
-      <b>학부연구생 모집 중</b> — 양자 컴퓨팅, 양자 머신러닝, 컴퓨터 비전, 무선 통신, 스마트 팩토리 분야에 관심 있는 학생은
-      <a href="mailto:daeil.noh@deu.ac.kr">이메일</a>로 연락 주세요.
-    </div>
-  </div>
-</section>
-
-<section id="publications">
-  <div class="wrap">
-    <div class="head">
-      <div class="sub">Publications</div>
-      <h2>주요 논문</h2>
-    </div>
-    <ul class="pubs">
-      <li>
-        <div class="yr">2026</div>
-        <div>
-          <div class="pt">GlaucoFormer: A transformer-based model for glaucoma detection and segmentation</div>
-          <div class="pa"><b>Dae-Il Noh</b>, Thien-Thanh Dao, Kyeong-Min Park, Seon-Geun Jeong, Won-Joo Hwang</div>
-          <div class="pv"><i>Applied Soft Computing</i>, 2026 · <a href="https://doi.org/10.1016/j.asoc.2026.115158" target="_blank" rel="noopener">DOI</a><span class="badge">Computer Vision</span></div>
-        </div>
-      </li>
-      <li>
-        <div class="yr">2025</div>
-        <div>
-          <div class="pt">Hybrid Quantum ResNet for Time Series Classification</div>
-          <div class="pa"><b>Dae-Il Noh</b>, Seon-Geun Jeong, Won-Joo Hwang</div>
-          <div class="pv"><i>IEEE Transactions on Emerging Topics in Computing</i>, 2025 · <a href="https://doi.org/10.1109/TETC.2025.3563944" target="_blank" rel="noopener">DOI</a><span class="badge">Quantum ML</span></div>
-        </div>
-      </li>
-      <li>
-        <div class="yr">2025</div>
-        <div>
-          <div class="pt">Quantum-Annealing-Based Sum Rate Maximization for Multi-UAV-Aided Wireless Networks</div>
-          <div class="pa">Seon-Geun Jeong, Pham Dang Anh Duc, Quang Vinh Do, <b>Dae-Il Noh</b>, Nguyen Xuan Tung, Trinh Van Chien, Quoc-Viet Pham, Mikio Hasegawa, Hiroo Sekiya, Won-Joo Hwang</div>
-          <div class="pv"><i>IEEE Internet of Things Journal</i>, 2025 · <a href="https://doi.org/10.1109/JIOT.2025.3546645" target="_blank" rel="noopener">DOI</a><span class="badge">Quantum Computing</span></div>
-        </div>
-      </li>
-      <li>
-        <div class="yr">2024</div>
-        <div>
-          <div class="pt">VT-MCNet: High-Accuracy Automatic Modulation Classification Model Based on Vision Transformer</div>
-          <div class="pa">Thien-Thanh Dao, <b>Dae-Il Noh</b>, Quoc-Viet Pham, Mikio Hasegawa, Hiroo Sekiya, Won-Joo Hwang</div>
-          <div class="pv"><i>IEEE Communications Letters</i>, 2024 · <a href="https://doi.org/10.1109/LCOMM.2023.3336985" target="_blank" rel="noopener">DOI</a><span class="badge">Wireless</span></div>
-        </div>
-      </li>
-      <li>
-        <div class="yr">2022</div>
-        <div>
-          <div class="pt">Signal Preprocessing Technique With Noise-Tolerant for RF-Based UAV Signal Classification</div>
-          <div class="pa"><b>Dae-Il Noh</b>, Seon-Geun Jeong, Huu-Trung Hoang, Quoc-Viet Pham, Thien Huynh-The, Mikio Hasegawa, Hiroo Sekiya, Sunyoung Kwon, Sang-Hwa Chung, Won-Joo Hwang</div>
-          <div class="pv"><i>IEEE Access</i>, 2022 · <a href="https://doi.org/10.1109/ACCESS.2022.3232036" target="_blank" rel="noopener">DOI</a><span class="badge">Wireless</span></div>
-        </div>
-      </li>
-    </ul>
-    <p class="more">전체 논문 목록은 <a href="https://scholar.google.com/citations?user=Ttsq5WkAAAAJ&hl=ko" target="_blank" rel="noopener">Google Scholar</a>에서 확인할 수 있습니다.</p>
-  </div>
-</section>
-
-<section id="contact" class="alt">
-  <div class="wrap">
-    <div class="head">
-      <div class="sub">Contact</div>
-      <h2>연락처</h2>
-    </div>
-    <div class="contact">
-      <div class="card">
-        <div class="k">Location</div>
-        <p style="margin-top:8px">부산광역시 부산진구 엄광로 176<br>동의대학교 산학협력관 804호</p>
-      </div>
-      <div class="card">
-        <div class="k">Email</div>
-        <p style="margin-top:8px"><a href="mailto:daeil.noh@deu.ac.kr">daeil.noh@deu.ac.kr</a></p>
-      </div>
-    </div>
-  </div>
-</section>
-
+</main>
 <footer>
-  <div class="wrap">© 2026 Quantum Computing·AI Convergence Lab, Dong-eui University</div>
+  <div class="wrap">
+    <span>© 2026 Quantum Computing·AI Convergence Lab, Dong-eui University</span>
+    <span>산학협력관 804호 · <a href="mailto:daeil.noh@deu.ac.kr">daeil.noh@deu.ac.kr</a></span>
+  </div>
 </footer>
-
-<script>
-/* 배경: 얽힌 큐비트처럼 연결되는 점들 */
-(function(){
-  const c=document.getElementById('qbits'); if(!c) return;
-  const x=c.getContext('2d'); let w,h,pts;
-  const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  function init(){
-    const r=window.devicePixelRatio||1;
-    w=c.offsetWidth; h=c.offsetHeight; c.width=w*r; c.height=h*r; x.setTransform(r,0,0,r,0,0);
-    const n=Math.min(70,Math.floor(w*h/14000));
-    pts=Array.from({length:n},()=>({x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-.5)*.3,vy:(Math.random()-.5)*.3,p:Math.random()*6.28}));
-  }
-  function draw(){
-    x.clearRect(0,0,w,h);
-    for(const a of pts){a.x+=a.vx;a.y+=a.vy;a.p+=.02;if(a.x<0||a.x>w)a.vx*=-1;if(a.y<0||a.y>h)a.vy*=-1;}
-    for(let i=0;i<pts.length;i++)for(let j=i+1;j<pts.length;j++){
-      const a=pts[i],b=pts[j],d=Math.hypot(a.x-b.x,a.y-b.y);
-      if(d<130){x.strokeStyle='rgba(140,160,255,'+(1-d/130)*.5+')';x.lineWidth=1;x.beginPath();x.moveTo(a.x,a.y);x.lineTo(b.x,b.y);x.stroke();}
-    }
-    for(const a of pts){x.fillStyle='rgba(190,175,255,'+(.55+.45*Math.sin(a.p))+')';x.beginPath();x.arc(a.x,a.y,2,0,6.28);x.fill();}
-    if(!reduce) requestAnimationFrame(draw);
-  }
-  init(); draw(); addEventListener('resize',()=>{init(); if(reduce) draw();});
-})();
-</script>
+<script src="assets/hero.js"></script>
 </body>
 </html>
