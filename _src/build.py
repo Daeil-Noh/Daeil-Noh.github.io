@@ -101,6 +101,10 @@ STUDENTS = [  # 학생 연구원: 사진은 images/people/ 에 3:4 비율로 저
 
 # 학회 발표 논문: PUBS와 같은 형식 (venue에 학회명, 필요하면 location 추가, doi는 없으면 None)
 CONFS = [
+    dict(year=2025, title="ML-Based Receiver Design for Chirp-Based Asynchronous Pulse Code Multiple Access for Massive IoT",
+         authors="Mayu Horiuchi, Ferdinand Peper, Kenji Leibnitz, Naoki Wakamiya, Jin Nakazato, Maki Arai, <b>Dae-Il Noh</b>, Won-Joo Hwang, Mikio Hasegawa",
+         venue="2025 Sixteenth International Conference on Ubiquitous and Future Networks (ICUFN)",
+         location="Lisbon, Portugal", doi="10.1109/ICUFN65838.2025.11170000", tag="Wireless"),
     dict(year=2025, title="Robust Machine Learning-Based Chirp Signal Detection for Asynchronous Pulse Code Multiple Access in Low-SNR Massive IoT Environments",
          authors="Mayu Horiuchi, Ferdinand Peper, Kenji Leibnitz, Naoki Wakamiya, Jin Nakazato, Maki Arai, <b>Dae-Il Noh</b>, Won-Joo Hwang, Mikio Hasegawa",
          venue="IEICE Technical Report, vol. 125, no. 190, pp. 24–29", doi=None, tag="Wireless"),
