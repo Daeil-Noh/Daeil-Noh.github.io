@@ -62,6 +62,9 @@ AREAS = [
 ]
 
 PUBS = [
+    dict(year=2026, title="Embedding-aware noise modeling of quantum annealing",
+         authors="Seon-Geun Jeong, Dinh Cong Mai, <b>Dae-Il Noh</b>, Quoc-Viet Pham, Won-Joo Hwang",
+         venue="Quantum Information Processing", doi="10.1007/s11128-026-05293-z", tag="Quantum Computing"),
     dict(year=2026, title="GlaucoFormer: A transformer-based model for glaucoma detection and segmentation",
          authors="<b>Dae-Il Noh</b>, Thien-Thanh Dao, Kyeong-Min Park, Seon-Geun Jeong, Won-Joo Hwang",
          venue="Applied Soft Computing", doi="10.1016/j.asoc.2026.115158", tag="Computer Vision"),
