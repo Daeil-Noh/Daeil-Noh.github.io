@@ -169,7 +169,9 @@ def pub_item(p, compact=False):
     idxs = p.get("idx") or []
     idxs = [idxs] if isinstance(idxs, str) else idxs  # 색인이 여러 개면 리스트로 (예: ["ESCI", "Scopus"])
     idx = "".join(f'<span class="idx idx-{i.lower()}">{i}</span>' for i in idxs)
-    body = (f'<div class="pt">{idx}{p["title"]}{award}</div><div class="pa">{p["authors"]}</div>'
+    # 마지막 저자 = 교신저자(*)
+    authors = p["authors"] + '<sup class="corr" title="교신저자">*</sup>'
+    body = (f'<div class="pt">{idx}{p["title"]}{award}</div><div class="pa">{authors}</div>'
             f'<div class="pv"><i>{p["venue"]}</i>{", " + p["location"] if p.get("location") else ""}, {p["year"]}'
             + (f' · <a href="https://doi.org/{p["doi"]}" target="_blank" rel="noopener">DOI</a>' if p.get("doi") else "")
             + (f' · {p["note"]}' if p.get("note") else "")
@@ -371,7 +373,7 @@ def publications():
     patent = pub_section("patent", "Patent", "특허", len(PATENTS),
                          f'<ul class="pubs">{"".join(patent_item(p) for p in pats)}</ul>', "특허 목록을 준비 중입니다.")
     content = page_head("Publications", "연구 성과",
-                        f'전체 논문 목록은 <a href="{SCHOLAR}" target="_blank" rel="noopener">Google Scholar</a>에서도 확인할 수 있습니다.') + journal + conf + patent
+                        f'<sup class="corr">*</sup> 교신저자 · 전체 논문 목록은 <a href="{SCHOLAR}" target="_blank" rel="noopener">Google Scholar</a>에서도 확인할 수 있습니다.') + journal + conf + patent
     return layout("publications.html", "연구 성과", "양자컴퓨팅·AI 융합연구실 연구 성과 — 저널 논문, 학술대회 논문, 특허", content)
 
 

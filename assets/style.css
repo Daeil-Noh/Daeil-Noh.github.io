@@ -160,3 +160,4 @@ h2 .count{font-size:15px;font-weight:700;color:var(--ink-3);margin-left:6px;vert
 .idx-esci{background:#3a4fd8}
 .idx-kci{background:#0f766e}
 .idx-scopus{background:#e8590c}
+.corr{color:var(--accent);font-weight:800;margin-left:1px}
