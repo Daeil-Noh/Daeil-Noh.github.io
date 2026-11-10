@@ -98,7 +98,7 @@ CONFS = [
          location="Jeju, Korea", doi=None, tag="Wireless"),
     dict(year=2021, title="주파수 기반 블루투스 신호 분류 CNN 모델",
          authors="<b>노대일</b>, Huu-Trung Hoang, 안수범, 황원주",
-         venue="2021년도 한국멀티미디어학회 춘계학술발표대회", location="대구",
+         venue="2021년도 한국멀티미디어학회 춘계학술발표대회", location="대구", note="Oral",
          award="우수논문상 (한국지능정보사회진흥원장상)",
          news="https://www.pusan.ac.kr/kor/CMS/Board/Board.do?mCode=MN109&mode=view&mgr_seq=12&board_seq=1464034",
          doi=None, tag="Wireless"),
