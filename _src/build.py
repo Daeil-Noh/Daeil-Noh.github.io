@@ -96,7 +96,7 @@ STUDENTS = [  # 학생 연구원: 사진은 images/people/ 에 3:4 비율로 저
     dict(ko="박세준", en="Se-Jun Park", role="학부연구생", dept="인공지능학과 3학년",
          email="20221948@g.deu.ac.kr", photo="images/people/se-jun-park.jpg"),
     dict(ko="정재원", en="Jaewon Chung", role="학부연구생", dept="인공지능학과 3학년",
-         email="20243242@office.deu.ac.kr", photo=None),  # 사진 받으면 images/people/jaewon-chung.jpg
+         email="20243242@office.deu.ac.kr", photo="images/people/jaewon-chung.jpg"),
 ]
 
 # 학회 발표 논문: PUBS와 같은 형식 (venue에 학회명, 필요하면 location 추가, doi는 없으면 None)
