@@ -237,7 +237,8 @@ def layout(fname, title, desc, content, scripts=""):
 
 def page_head(sub, h1, p=""):
     para = f"<p>{p}</p>" if p else ""
-    return f'<div class="page-head"><div class="wrap"><div class="sub">{sub}</div><h1>{h1}</h1>{para}</div></div>'
+    sub_html = f'<div class="sub">{sub}</div>' if sub else ""
+    return f'<div class="page-head"><div class="wrap">{sub_html}<h1>{h1}</h1>{para}</div></div>'
 
 
 # ---------- Home ----------
@@ -371,8 +372,8 @@ def patent_item(p):
 
 def pub_section(sid, sub, h2, count, body, empty):
     inner = body if count else f'<div class="empty">{empty}</div>'
-    return (f'<section id="{sid}"><div class="wrap"><div class="head"><div><div class="sub">{sub}</div>'
-            f'<h2>{h2}</h2></div></div>{inner}</div></section>')
+    return (f'<section id="{sid}"><div class="wrap"><div class="head"><div>'
+            f'<h2>{sub}</h2></div></div>{inner}</div></section>')
 
 
 def publications():
@@ -383,9 +384,10 @@ def publications():
     pats = sorted(PATENTS, key=lambda p: p["reg_date"], reverse=True)
     patent = pub_section("patent", "Patent", "특허", len(PATENTS),
                          f'<ul class="pubs">{"".join(patent_item(p) for p in pats)}</ul>', "특허 목록을 준비 중입니다.")
-    content = page_head("Publications", "연구 성과",
-                        f'<sup class="corr">*</sup> 교신저자 · 전체 논문 목록은 <a href="{SCHOLAR}" target="_blank" rel="noopener">Google Scholar</a>에서도 확인할 수 있습니다.') + journal + conf + patent
-    return layout("publications.html", "연구 성과", "양자컴퓨팅·AI 융합연구실 연구 성과 — 저널 논문, 학술대회 논문, 특허", content)
+    content = page_head("", "Publications",
+                        f'전체 논문 목록은 <a href="{SCHOLAR}" target="_blank" rel="noopener">Google Scholar</a>에서도 확인할 수 있습니다.') + \
+        journal + conf + patent
+    return layout("publications.html", "Publications", "양자컴퓨팅·AI 융합연구실 연구 성과 — Journal, Conference, Patent", content)
 
 
 # ---------- Contact ----------
